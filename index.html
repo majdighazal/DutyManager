@@ -106,35 +106,6 @@ body{background:radial-gradient(circle at 12% 0,rgba(201,169,104,.22),transparen
 </style>
 <style>
 .summary .score-percent{display:inline-flex;margin-top:5px;padding:5px 10px;border:2px solid #eadbbd;border-radius:20px;background:#177245;color:#fff!important;font-size:15px;font-weight:900;box-shadow:0 3px 8px rgba(0,0,0,.18)}.employee-ack{display:block;margin:12px 10px;border:3px solid #b9985a;border-radius:13px;background:#faf6ed;overflow:hidden;box-shadow:0 8px 20px rgba(16,27,47,.12)}.employee-ack-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;background:#253650;color:#fff;font-size:15px;font-weight:900}.employee-ack-score{display:inline-flex;padding:7px 13px;border:2px solid #eadbbd;border-radius:20px;background:#177245;color:#fff;font-size:17px;box-shadow:0 3px 9px rgba(0,0,0,.2)}.employee-ack-fields{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:12px;padding:14px}.employee-ack label{display:block;color:#253650;font-size:13px;font-weight:900;text-transform:uppercase}.employee-ack input[type=text]{display:block;width:100%;min-height:50px;margin-top:7px;padding:10px 12px;border:2px solid #aeb9c7;border-radius:9px;background:#fff;color:#101b2f;font-size:18px;font-weight:800}.ack-signature-box{position:relative;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid #8d6b2f;border-radius:9px;overflow:hidden;touch-action:none;box-shadow:inset 0 0 0 1px #eadbbd;height:145px;width:100%}.ack-signature-box canvas{display:block;width:100%;height:100%;cursor:crosshair;touch-action:none;background:#fff}.ack-signature-hint{position:absolute;inset:0;display:grid;place-items:center;padding:8px;color:#8994a3;font-size:13px;text-align:center;text-transform:none;pointer-events:none;background:rgba(255,255,255,0.85);border-radius:9px}.ack-signature-hint[hidden]{display:none!important}.ack-buttons{display:flex;justify-content:flex-end;gap:8px;padding:0 14px 14px}.ack-buttons .btn{min-width:155px}.ack-file{display:none!important}
-/* PC buttons always visible in acknowledgement mode */
-.acknowledgement-report .customize-launch,
-.acknowledgement-report .actions .save,
-.acknowledgement-report .actions .danger,
-.acknowledgement-report .actions button[onclick*="importInput"],
-.acknowledgement-report #addAnotherRoomButton,
-.acknowledgement-report #importInput { display:flex!important; }
-.acknowledgement-report .inspection-picker,
-.acknowledgement-report .room-start-hint,
-.acknowledgement-report .remove,
-.acknowledgement-report .photo button,
-.acknowledgement-report .photo input,
-.acknowledgement-report .photo-actions { display:none!important; }
-.acknowledgement-report .room-number,
-.acknowledgement-report .room-time,
-.acknowledgement-report .comment textarea,
-.acknowledgement-report #checkedBy,
-.acknowledgement-report #designation,
-.acknowledgement-report #reportDate{background:#eef1f5!important}
-.acknowledgement-report .room-toggle{display:none!important}
-.acknowledgement-report .signature-launch{display:flex!important;margin:5px 12px 9px}
-.acknowledgement-report .signature-launch .btn{min-width:0;min-height:30px;height:30px;padding:4px 10px;font-size:10px}
-.acknowledgement-report .signature-section{margin-top:0}
-/* KEEP signature actions visible */
-.acknowledgement-report .signature-actions{display:flex!important;gap:8px;justify-content:flex-end}
-.acknowledgement-report #signaturePad{pointer-events:none!important;cursor:default!important}
-.acknowledgement-report .signature-pad-wrap{touch-action:auto!important}
-@media(max-width:800px){.employee-ack-fields{grid-template-columns:1fr}.ack-signature-box{height:165px}}
-@media(max-width:520px){.ack-buttons{display:grid;grid-template-columns:1fr 1fr}.ack-buttons .btn{width:100%;min-width:0}}
 </style><style>
 .room-head{grid-template-columns:minmax(190px,1fr) 108px 108px 78px 80px 88px!important;gap:7px!important;align-items:center!important;padding:10px 12px!important}.room[data-type="Daily Service Occupied"] .room-head,.room[data-type="Daily Service Occupied"] .employee-ack-head{background:linear-gradient(135deg,#0f5f43,#187a57)!important}.room[data-type="Evening Service"] .room-head,.room[data-type="Evening Service"] .employee-ack-head{background:linear-gradient(135deg,#243f63,#345b89)!important}.room[data-type="Arrival Vacant"] .room-head,.room[data-type="Arrival Vacant"] .employee-ack-head{background:linear-gradient(135deg,#57405f,#765781)!important}.room[data-type="Daily Service Occupied"]{border-color:#187a57}.room[data-type="Evening Service"]{border-color:#345b89}.room[data-type="Arrival Vacant"]{border-color:#765781}.room-head .type{align-self:center;min-width:0}.room-head .type small{margin-bottom:3px;letter-spacing:.04em}.room-head .type b{display:block;font-size:13px;line-height:1.2}.room-head label{align-self:center;margin:0}.room-head label input{min-height:40px!important;height:40px!important;margin-top:4px!important;font-size:15px!important}.room-head .summary{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:46px;padding:3px 4px;border:1px solid rgba(234,219,189,.7);border-radius:8px;background:rgba(255,255,255,.07);font-size:8.5px;line-height:1.02}.room-head .summary .score-percent{margin-top:2px;padding:2px 6px;border-width:1px;border-radius:12px;font-size:11px;box-shadow:none}.room-head .remove{width:80px!important;min-width:70px;height:38px;align-self:center;padding:4px 6px;font-size:11px!important;letter-spacing:0.3px}.header-room-toggle{display:flex!important;align-items:center;justify-content:center;width:100%!important;min-width:0!important;height:38px!important;padding:5px 7px!important;border:1px solid #eadbbd!important;border-radius:8px!important;background:linear-gradient(135deg,#f4e5bf,#d8bf87)!important;color:#101b2f!important;font-size:11px!important;font-weight:900!important;box-shadow:0 4px 10px rgba(0,0,0,.16)!important}.header-room-toggle:hover{transform:translateY(-1px);box-shadow:0 6px 13px rgba(0,0,0,.22)!important}.room-hidden .header-room-toggle{background:linear-gradient(135deg,#fff,#eadbbd)!important}.room-hidden > *:not(.room-head) { display: none !important; }.ack-room-control{display:flex;justify-content:flex-end;padding:0 14px 14px}.ack-room-toggle{display:none;min-height:36px;padding:6px 12px;border:1px solid #b9985a;border-radius:8px;background:#fff;color:#101b2f;font-size:10px;font-weight:900}.acknowledgement-report .header-room-toggle{display:none!important}.acknowledgement-report .room-head{grid-template-columns:minmax(190px,1fr) 108px 108px 78px!important}.acknowledgement-report .room-head .remove{display:none!important}.acknowledgement-report .ack-room-control .ack-room-toggle{display:block;min-width:125px}.acknowledgement-report .ack-room-collapsed .room-head{grid-template-columns:minmax(190px,1fr) 108px 108px 78px 92px!important}.acknowledgement-report .ack-room-collapsed .room-head>.ack-room-toggle{display:block}.acknowledgement-report .ack-room-toggle:disabled{cursor:not-allowed;opacity:.48;border-color:#aeb9c7}.acknowledgement-report .ack-room-toggle:not(:disabled){border-color:#b9985a;background:linear-gradient(135deg,#f4e5bf,#d8bf87);color:#101b2f;box-shadow:0 4px 10px rgba(0,0,0,.14)}.acknowledgement-report .ack-room-collapsed .checks,.acknowledgement-report .ack-room-collapsed .employee-ack{display:none!important}.acknowledgement-report .ack-room-collapsed .room-head{border-bottom:0}.acknowledgement-report .ack-room-collapsed{border-color:#b9985a}
 @media(max-width:900px){.room-head,.acknowledgement-report .room-head,.acknowledgement-report .ack-room-collapsed .room-head{grid-template-columns:1fr 1fr!important}.room-head .type{grid-column:1/-1}.room-head .summary,.room-head .remove,.header-room-toggle,.acknowledgement-report .ack-room-toggle{width:100%;min-height:40px}.room-head .remove{font-size:13px!important}.acknowledgement-report .ack-room-collapsed .room-head>.ack-room-toggle{display:block}}
@@ -148,7 +119,7 @@ body{background:radial-gradient(circle at 12% 0,rgba(201,169,104,.22),transparen
 @media(min-width:901px){.room-head{grid-template-columns:minmax(180px,1fr) 110px 142px 78px 80px 88px!important}.acknowledgement-report .room-head{grid-template-columns:minmax(180px,1fr) 110px 142px 78px!important}.acknowledgement-report .ack-room-collapsed .room-head{grid-template-columns:minmax(180px,1fr) 110px 142px 78px 92px!important}}
 .room-head label:has(.room-time){min-width:0}.room-head .room-time{width:100%!important;min-width:0!important;padding-left:10px!important;padding-right:10px!important;font-variant-numeric:tabular-nums}
 @media(max-width:520px){.room-head label:has(.room-time){width:100%!important}.room-head .room-time{height:48px!important;padding:8px 14px!important;font-size:18px!important}}
-</style><style>.formatted-date-wrap{position:relative;width:100%;min-height:38px}.formatted-date-display{width:100%;min-height:38px;padding:8px 34px 8px 10px!important;border:0!important;background:#fff!important;color:#101b2f!important;font-size:16px!important;font-weight:900!important;text-align:center!important}.formatted-date-wrap #reportDate{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;cursor:pointer!important}.acknowledgement-report .formatted-date-wrap #reportDate{pointer-events:none!important}.acknowledgement-report .formatted-date-display{background:#eef1f5!important}</style><script>window.CUSTOM_FORM_CONFIG={"property":"Conrad Abu Dhabi Etihad Towers","checks":{"Daily Service Occupied":["Wastebaskets must be emptied.","Floor is to be clear of all debris.","Used in-room dining glassware, serveware, trays, or trolleys are to be removed.","Bed linen is to be replaced if the guest requests that the linen be changed, the linen is stained or damaged, or there is a discrepancy between Front Office and Housekeeping on the room status.","Bed is to be remade.","Guest room glassware, silver, dishware, and coffee/tea brewers are to be replaced with sanitized product. Glassware, silver, dishware, and coffee/tea brewers must be washed in a commercial dishwasher prior to replacing. Chemical sanitization is not permitted.","Food and beverage amenities must be refreshed, removed, or replaced.","Guest room refreshment center must be refreshed.","Replenish tea, coffee, and condiments as needed.","Ice bucket, if used, must be cleaned, and re-filled with ice.","Clothing left out in the room must be folded and/or neatly draped in an area visible to the guest. Shoes must be paired and neatly placed out of high-traffic areas.","Magazine, newspapers, and other collateral are refreshed, neatly folded and placed in their designated location.","Televisions are turned off or set to an appropriate welcome channel.","Furniture doors and drawers are closed.","Desk chair is pushed in.","Window treatments are opened and symmetrical in appearance.","All kitchen surfaces must be wiped down.","In-room fitness equipment is to be cleaned.","Replace bath amenities based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, fixtures, and appointments are cleaned.","Linens, terry, and robes are replaced if the guest requests that terry be changed, the terry is stained or damaged, the terry is placed on the floor or in the bathtub, or there is a discrepancy between Front Office and Housekeeping on the room status.","Toiletries and cosmetics are neatly placed on top of a high-quality mat/liner, unless placed on narrow shelves.","Hairdryers must have cords neatly coiled and be placed on top of the applicable bag.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Facial tissue must be restocked as needed."],"Evening Service":["Bed is to be remade and prepared with an appropriate turndown fold. All decorative elements are to be removed and stored out of the guest’s way.","Clothing left out in the room must be folded and/or neatly draped in an area visible to the guest. Shoes must be paired and neatly placed out of high-traffic areas.","Magazine, newspapers, and other collateral are refreshed, neatly folded and placed in their designated location.","Wastebaskets must be emptied.","Floor is to be clear of all debris.","A bottle of water must be placed on the nightstand for each guest, presented with a glass and a coaster.","Slippers are to be placed on a mat next to the guest’s side of the bed.","Window treatments must be closed unless necessary to showcase a cityscape or noteworthy view.","Adjust lighting levels throughout the room to establish a relaxing environment. If available, turn on music to further activate the space.","Place the in-room dining breakfast pre-order menu, pen, remote control, and channel guide (if printed) on the nightstand.","Replenish tea, coffee, and condiments.","Fill ice bucket and place tongs next to the bucket.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, counters, sinks, shower, and tub are to be cleaned.","Toiletries and cosmetics are neatly placed on top of a high-quality mat/liner, unless placed on narrow shelves.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Linens, terry, and robes are replaced if the guest requests that items be changed, the item is stained or damaged, the item is placed on the floor or in the bathtub, or there is a discrepancy between Front Office and Housekeeping on the room status."],"Arrival Vacant":["All sheets, duvet covers (if applicable), and pillowcases must be removed and replaced with laundered product. No linens may be left behind to be collected later in the day.","Wastebaskets must be emptied and cleaned.","Floor is to be vacuumed or mopped (as applicable).","Used in-room dining glassware, serveware, trays, or trolleys are to be removed.","Guest room glassware, silver, and dishware is to be removed and replaced with sanitized product.","Coffee/Tea equipment are to be cleaned per manufacturer instructions.","Food and beverage amenities (as applicable) must be refreshed, removed, or replaced as needed.","Guest room refreshment center must be refreshed as needed, refer to Section 411.00.","Replenish tea, coffee, and condiments as needed.","Ice bucket, if used, must be cleaned.","Magazine, newspapers, and other collateral are refreshed, neatly folded (as applicable) and placed in their designated location.","Televisions are turned off or set to an appropriate welcome channel.","Furniture doors and drawers are closed.","Window treatments are opened and left symmetrical in appearance.","Kitchen area and equipment must be cleaned (if applicable).","All terry must be removed and replaced with laundered product. No terry may be left behind to be collected later in the day.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, fixtures, and appointments (including showers, tubs, vanities, and sinks) are cleaned and disinfected.","Hairdryers must have cords neatly coiled and be placed on top of the applicable bag.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Facial tissue must be restocked as needed."],"Custom_1786118917875":["Toilet tissue to be replaced as needed with end sheet neatly folded.","Toilet tissue to be replaced as needed with end sheet neatly folded."]},"labels":{"Daily Service Occupied":"Daily Occupied Service","Evening Service":"Evening Service","Arrival Vacant":"Arrival Vacant","Custom_1786118917875":"Night Shift"},"storageKey":"customRoom_1786118943188"};</script></head><body>
+</style><style>.formatted-date-wrap{position:relative;width:100%;min-height:38px}.formatted-date-display{width:100%;min-height:38px;padding:8px 34px 8px 10px!important;border:0!important;background:#fff!important;color:#101b2f!important;font-size:16px!important;font-weight:900!important;text-align:center!important}.formatted-date-wrap #reportDate{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;cursor:pointer!important}.acknowledgement-report .formatted-date-wrap #reportDate{pointer-events:none!important}.acknowledgement-report .formatted-date-display{background:#eef1f5!important}</style><script>window.CUSTOM_FORM_CONFIG={"property":"Conrad Abu Dhabi Etihad Towers","checks":{"Daily Service Occupied":["Wastebaskets must be emptied.","Floor is to be clear of all debris.","Used in-room dining glassware, serveware, trays, or trolleys are to be removed.","Bed linen is to be replaced if the guest requests that the linen be changed, the linen is stained or damaged, or there is a discrepancy between Front Office and Housekeeping on the room status.","Bed is to be remade.","Guest room glassware, silver, dishware, and coffee/tea brewers are to be replaced with sanitized product. Glassware, silver, dishware, and coffee/tea brewers must be washed in a commercial dishwasher prior to replacing. Chemical sanitization is not permitted.","Food and beverage amenities must be refreshed, removed, or replaced.","Guest room refreshment center must be refreshed.","Replenish tea, coffee, and condiments as needed.","Ice bucket, if used, must be cleaned, and re-filled with ice.","Clothing left out in the room must be folded and/or neatly draped in an area visible to the guest. Shoes must be paired and neatly placed out of high-traffic areas.","Magazine, newspapers, and other collateral are refreshed, neatly folded and placed in their designated location.","Televisions are turned off or set to an appropriate welcome channel.","Furniture doors and drawers are closed.","Desk chair is pushed in.","Window treatments are opened and symmetrical in appearance.","All kitchen surfaces must be wiped down.","In-room fitness equipment is to be cleaned.","Replace bath amenities based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, fixtures, and appointments are cleaned.","Linens, terry, and robes are replaced if the guest requests that terry be changed, the terry is stained or damaged, the terry is placed on the floor or in the bathtub, or there is a discrepancy between Front Office and Housekeeping on the room status.","Toiletries and cosmetics are neatly placed on top of a high-quality mat/liner, unless placed on narrow shelves.","Hairdryers must have cords neatly coiled and be placed on top of the applicable bag.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Facial tissue must be restocked as needed."],"Evening Service":["Bed is to be remade and prepared with an appropriate turndown fold. All decorative elements are to be removed and stored out of the guest’s way.","Clothing left out in the room must be folded and/or neatly draped in an area visible to the guest. Shoes must be paired and neatly placed out of high-traffic areas.","Magazine, newspapers, and other collateral are refreshed, neatly folded and placed in their designated location.","Wastebaskets must be emptied.","Floor is to be clear of all debris.","A bottle of water must be placed on the nightstand for each guest, presented with a glass and a coaster.","Slippers are to be placed on a mat next to the guest’s side of the bed.","Window treatments must be closed unless necessary to showcase a cityscape or noteworthy view.","Adjust lighting levels throughout the room to establish a relaxing environment. If available, turn on music to further activate the space.","Place the in-room dining breakfast pre-order menu, pen, remote control, and channel guide (if printed) on the nightstand.","Replenish tea, coffee, and condiments.","Fill ice bucket and place tongs next to the bucket.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, counters, sinks, shower, and tub are to be cleaned.","Toiletries and cosmetics are neatly placed on top of a high-quality mat/liner, unless placed on narrow shelves.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Linens, terry, and robes are replaced if the guest requests that items be changed, the item is stained or damaged, the item is placed on the floor or in the bathtub, or there is a discrepancy between Front Office and Housekeeping on the room status."],"Arrival Vacant":["All sheets, duvet covers (if applicable), and pillowcases must be removed and replaced with laundered product. No linens may be left behind to be collected later in the day.","Wastebaskets must be emptied and cleaned.","Floor is to be vacuumed or mopped (as applicable).","Used in-room dining glassware, serveware, trays, or trolleys are to be removed.","Guest room glassware, silver, and dishware is to be removed and replaced with sanitized product.","Coffee/Tea equipment are to be cleaned per manufacturer instructions.","Food and beverage amenities (as applicable) must be refreshed, removed, or replaced as needed.","Guest room refreshment center must be refreshed as needed, refer to Section 411.00.","Replenish tea, coffee, and condiments as needed.","Ice bucket, if used, must be cleaned.","Magazine, newspapers, and other collateral are refreshed, neatly folded (as applicable) and placed in their designated location.","Televisions are turned off or set to an appropriate welcome channel.","Furniture doors and drawers are closed.","Window treatments are opened and left symmetrical in appearance.","Kitchen area and equipment must be cleaned (if applicable).","All terry must be removed and replaced with laundered product. No terry may be left behind to be collected later in the day.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, fixtures, and appointments (including showers, tubs, vanities, and sinks) are cleaned and disinfected.","Hairdryers must have cords neatly coiled and be placed on top of the applicable bag.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Facial tissue must be restocked as needed."]},"labels":{"Daily Service Occupied":"Daily Occupied Service","Evening Service":"Evening Service","Arrival Vacant":"Arrival Vacant"},"storageKey":"customRoom_1786135190652"};</script></head><body>
 <header class="header"><div class="language-picker"><label for="checklistLanguage">Language</label><select id="checklistLanguage" aria-label="Language" onchange="changeChecklistLanguage(this.value)"><option value="en">English</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="am">Amharic</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="et">Estonian</option><option value="fil">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="he">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="si">Sinhala (Sri Lanka)</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="zu">Zulu</option></select></div><button class="btn menu menu-toggle" id="actionsToggle" type="button" onclick="toggleActionButtons(this)">Show Buttons</button><button class="btn menu" id="homeButton" type="button" onclick="document.getElementById('reportInformation').scrollIntoView({behavior:'smooth',block:'start'})">Home</button><div class="actions" id="actionsContainer"><button class="btn primary report-action" type="button" onclick="beginAcknowledgementFlow()">Generate Report</button><button class="btn save" type="button" onclick="exportData()">Save to File</button><button class="btn primary" type="button" onclick="importInput.click()">Import File</button><button class="btn danger" type="button" onclick="clearAll()">Clear All</button></div></header>
 <style>.signature-section{margin:0 12px 12px;border:2px solid #172b45;border-radius:10px;overflow:hidden;background:#fff}.signature-layout{display:grid;grid-template-columns:145px minmax(0,1fr);min-height:150px}.signature-label{display:flex;align-items:center;justify-content:center;padding:12px;background:#e9edf2;color:#101b2f;font-size:12px;font-weight:900;text-align:center;text-transform:uppercase;border-right:1px solid #aeb9c7}.signature-workspace{padding:10px}.signature-pad-wrap{position:relative;height:105px;border:1px dashed #9aa7b6;border-radius:8px;background:#fff;overflow:hidden;touch-action:none}.signature-pad{display:block;width:100%;height:100%;cursor:crosshair;touch-action:none}.signature-hint{position:absolute;inset:0;display:grid;place-items:center;color:#8994a3;font-size:12px;font-weight:700;pointer-events:none}.signature-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}.signature-actions .btn{min-width:145px}.signature-file{display:none}@media(max-width:520px){.signature-section{margin:7px}.signature-layout{grid-template-columns:1fr}.signature-label{min-height:42px;border-right:0;border-bottom:1px solid #aeb9c7}.signature-actions{display:grid;grid-template-columns:1fr 1fr}.signature-actions .btn{width:100%;min-width:0;padding:6px}.signature-pad-wrap{height:125px}}</style>
 <style>.signature-launch{display:flex;justify-content:center;margin:0 12px 12px}.signature-launch .btn{min-width:225px;background:linear-gradient(135deg,#b9985a,#d8bf87);border:2px solid #8d6b2f;color:#101b2f}.signature-layout{min-height:0}.signature-label{padding:8px}.signature-workspace{padding:10px}.signature-pad-wrap{height:145px}.signature-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:8px}.signature-actions .btn{width:100%;min-width:0;min-height:38px;height:38px}@media(max-width:520px){.signature-launch{margin:7px}.signature-launch .btn{width:100%}.signature-pad-wrap{height:165px}.signature-label{min-height:36px}.signature-actions{grid-template-columns:repeat(3,minmax(0,1fr))}.signature-actions .btn{padding:5px;font-size:11px}}</style>
@@ -159,7 +130,7 @@ body{background:radial-gradient(circle at 12% 0,rgba(201,169,104,.22),transparen
 </style>
 <div class="status" id="status">Auto Save Success in your device browser</div>
 <main class="wrap"><div class="hero"><small id="propertyTitle">Conrad Abu Dhabi Etihad Towers</small><h1>DAILY HOUSEKEEPING PROTOCOL</h1></div>
-<div class="section-title" id="reportInformation">Report Information</div><div class="info-grid"><div class="field"><div class="label">Checked By</div><div class="control"><input id="checkedBy" required="" placeholder="Full name"></div></div><div class="field"><div class="label">Designation</div><div class="control"><input id="designation" required="" placeholder="Job title"></div></div><div class="field"><div class="label">Inspection Date</div><div class="control"><div class="formatted-date-wrap"><input id="reportDateDisplay" class="formatted-date-display" readonly="" tabindex="-1" placeholder="dd/mmm/yyyy"><input id="reportDate" type="date" required="" data-formatted-bound="true"></div></div></div></div><div class="signature-launch" id="signatureLaunch"><button class="btn" type="button" onclick="openInspectorSignature()">Inspector Signature</button></div><section class="signature-section hidden" id="signatureSection"><div class="signature-layout"><div class="signature-label">Signature <span style="color:#b42318">*</span></div><div class="signature-workspace"><div class="signature-pad-wrap"><canvas id="signaturePad" class="signature-pad" tabindex="0" aria-label="Required signature field" width="1" height="1"></canvas><div id="signatureHint" class="signature-hint hidden">Required — sign using mouse, pen, or finger</div></div><div class="signature-actions"><button class="btn primary" type="button" onclick="signatureInput.click()">Browse Signature</button><button class="btn danger" type="button" onclick="clearSignature()">Clear</button><button class="btn" type="button" onclick="hideInspectorSignature()">Hide Signature</button></div></div></div></section>
+<div class="section-title" id="reportInformation">Report Information</div><div class="info-grid"><div class="field"><div class="label">Checked By</div><div class="control"><input id="checkedBy" required="" placeholder="Full name"></div></div><div class="field"><div class="label">Designation</div><div class="control"><input id="designation" required="" placeholder="Job title"></div></div><div class="field"><div class="label">Inspection Date</div><div class="control"><div class="formatted-date-wrap"><input id="reportDateDisplay" class="formatted-date-display" readonly="" tabindex="-1" placeholder="dd/mmm/yyyy"><input id="reportDate" type="date" required="" data-formatted-bound="true"></div></div></div></div><div class="signature-launch" id="signatureLaunch"><button class="btn" type="button" onclick="openInspectorSignature()">Inspector Signature</button></div><section class="signature-section hidden" id="signatureSection"><div class="signature-layout"><div class="signature-label">Signature <span style="color:#b42318">*</span></div><div class="signature-workspace"><div class="signature-pad-wrap"><canvas id="signaturePad" class="signature-pad" tabindex="0" aria-label="Required signature field"></canvas><div id="signatureHint" class="signature-hint hidden">Required — sign using mouse, pen, or finger</div></div><div class="signature-actions"><button class="btn primary" type="button" onclick="signatureInput.click()">Browse Signature</button><button class="btn danger" type="button" onclick="clearSignature()">Clear</button><button class="btn" type="button" onclick="hideInspectorSignature()">Hide Signature</button></div></div></div></section>
 <div class="section-title">Room Inspection</div>
 <div class="inspection-picker"><button class="add" id="addRoomButton" type="button" onclick="addSelectedRoom()">＋ Add New Room</button></div><div class="room-start-hint">CLICK ADD NEW ROOM BUTTON TO START ROOM INSPECTION</div><div class="rooms" id="rooms"></div><div class="bottom"><button class="add" id="addAnotherRoomButton" type="button" onclick="addSelectedRoom()">＋ Add Another Room</button></div><div class="footer">DAILY HOUSEKEEPING PROTOCOL</div></main>
 <input id="importInput" class="hidden" type="file" accept="application/json,.json" onchange="importData(this)">
@@ -203,6 +174,7 @@ const DEFAULTS={
 "Evening Service":["Bed is to be remade and prepared with an appropriate turndown fold. All decorative elements are to be removed and stored out of the guest’s way.","Clothing left out in the room must be folded and/or neatly draped in an area visible to the guest. Shoes must be paired and neatly placed out of high-traffic areas.","Magazine, newspapers, and other collateral are refreshed, neatly folded and placed in their designated location.","Wastebaskets must be emptied.","Floor is to be clear of all debris.","A bottle of water must be placed on the nightstand for each guest, presented with a glass and a coaster.","Slippers are to be placed on a mat next to the guest’s side of the bed.","Window treatments must be closed unless necessary to showcase a cityscape or noteworthy view.","Adjust lighting levels throughout the room to establish a relaxing environment. If available, turn on music to further activate the space.","Place the in-room dining breakfast pre-order menu, pen, remote control, and channel guide (if printed) on the nightstand.","Replenish tea, coffee, and condiments.","Fill ice bucket and place tongs next to the bucket.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, counters, sinks, shower, and tub are to be cleaned.","Toiletries and cosmetics are neatly placed on top of a high-quality mat/liner, unless placed on narrow shelves.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Linens, terry, and robes are replaced if the guest requests that items be changed, the item is stained or damaged, the item is placed on the floor or in the bathtub, or there is a discrepancy between Front Office and Housekeeping on the room status."],
 "Arrival Vacant":["All sheets, duvet covers (if applicable), and pillowcases must be removed and replaced with laundered product. No linens may be left behind to be collected later in the day.","Wastebaskets must be emptied and cleaned.","Floor is to be vacuumed or mopped (as applicable).","Used in-room dining glassware, serveware, trays, or trolleys are to be removed.","Guest room glassware, silver, and dishware is to be removed and replaced with sanitized product.","Coffee/Tea equipment are to be cleaned per manufacturer instructions.","Food and beverage amenities (as applicable) must be refreshed, removed, or replaced as needed.","Guest room refreshment center must be refreshed as needed, refer to Section 411.00.","Replenish tea, coffee, and condiments as needed.","Ice bucket, if used, must be cleaned.","Magazine, newspapers, and other collateral are refreshed, neatly folded (as applicable) and placed in their designated location.","Televisions are turned off or set to an appropriate welcome channel.","Furniture doors and drawers are closed.","Window treatments are opened and left symmetrical in appearance.","Kitchen area and equipment must be cleaned (if applicable).","All terry must be removed and replaced with laundered product. No terry may be left behind to be collected later in the day.","Replace bath amenities as needed based on guest usage. The amount of product must be sufficient to last until the next service.","Floors, fixtures, and appointments (including showers, tubs, vanities, and sinks) are cleaned and disinfected.","Hairdryers must have cords neatly coiled and be placed on top of the applicable bag.","Toilet tissue to be replaced as needed with end sheet neatly folded.","Facial tissue must be restocked as needed."]};
 let config=window.CUSTOM_FORM_CONFIG?structuredClone(window.CUSTOM_FORM_CONFIG):{property:'Conrad Abu Dhabi Etihad Towers',checks:structuredClone(DEFAULTS),labels:{},storageKey:'modRoom'},roomSeq=0,saveTimer;const CONFIGURED_ENGLISH_CHECKLIST=structuredClone(config.checks),draftKey=()=>`${config.storageKey||'modRoom'}Draft`;
+function allTypeKeys(){const keys=Object.keys(config.checks||{});document.querySelectorAll('.room[data-type]').forEach(r=>{if(!keys.includes(r.dataset.type))keys.push(r.dataset.type)});return keys}
 const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const GLOBAL_LANGUAGES=[['af','Afrikaans'],['sq','Albanian'],['am','Amharic'],['ar','Arabic'],['hy','Armenian'],['az','Azerbaijani'],['eu','Basque'],['be','Belarusian'],['bn','Bengali'],['bs','Bosnian'],['bg','Bulgarian'],['ca','Catalan'],['zh-CN','Chinese (Simplified)'],['zh-TW','Chinese (Traditional)'],['hr','Croatian'],['cs','Czech'],['da','Danish'],['nl','Dutch'],['et','Estonian'],['fil','Filipino'],['fi','Finnish'],['fr','French'],['gl','Galician'],['ka','Georgian'],['de','German'],['el','Greek'],['gu','Gujarati'],['ht','Haitian Creole'],['he','Hebrew'],['hi','Hindi'],['hu','Hungarian'],['is','Icelandic'],['id','Indonesian'],['ga','Irish'],['it','Italian'],['ja','Japanese'],['kn','Kannada'],['kk','Kazakh'],['km','Khmer'],['ko','Korean'],['lo','Lao'],['lv','Latvian'],['lt','Lithuanian'],['mk','Macedonian'],['ms','Malay'],['ml','Malayalam'],['mr','Marathi'],['mn','Mongolian'],['my','Myanmar (Burmese)'],['ne','Nepali'],['no','Norwegian'],['fa','Persian'],['pl','Polish'],['pt','Portuguese'],['pa','Punjabi'],['ro','Romanian'],['ru','Russian'],['sr','Serbian'],['si','Sinhala (Sri Lanka)'],['sk','Slovak'],['sl','Slovenian'],['es','Spanish'],['sw','Swahili'],['sv','Swedish'],['ta','Tamil'],['te','Telugu'],['th','Thai'],['tr','Turkish'],['uk','Ukrainian'],['ur','Urdu'],['uz','Uzbek'],['vi','Vietnamese'],['cy','Welsh'],['zu','Zulu']];
 function populateLanguageList(){const select=$('checklistLanguage');GLOBAL_LANGUAGES.forEach(([code,name])=>{const option=document.createElement('option');option.value=code;option.textContent=name;select.appendChild(option)})}
@@ -248,7 +220,7 @@ function chooseInspectionType(type){if($('inspectionTypeDialog').open)$('inspect
 function createRoomInspection(type){if($('rooms').querySelector('.empty'))$('rooms').innerHTML='';const marker=roomSeq+1;$('rooms').insertAdjacentHTML('beforeend',roomTemplate(type)); const newRoom = $('rooms').lastElementChild; newRoom.insertAdjacentHTML('beforeend', ackTemplate(newRoom)); initAckCanvas(newRoom.querySelector('.ack-signature'));renderGroups();const room=$('rooms').querySelector(`.room[data-id="${marker}"]`),roomNumber=room?.querySelector('.room-number');const language=$('checklistLanguage')?.value||'en';if(language!=='en'&&room)changeChecklistLanguage(language,false,room);if(roomNumber){roomNumber.scrollIntoView({behavior:'smooth',block:'center'});roomNumber.focus({preventScroll:true});roomNumber.click();setTimeout(()=>roomNumber.focus({preventScroll:true}),250)}autosave()}
 function toggleRoom(button){const room=button.closest('.room'),isHidden=room.classList.contains('room-hidden');const hidden=room.classList.toggle('room-hidden');room.querySelectorAll('.room-toggle').forEach(toggle=>toggle.textContent=hidden?'Show Room':'Hide Room');autosave()}
 let pendingRoomDelete=null;function requestDeleteRoom(button){pendingRoomDelete=button.closest('.room');const number=pendingRoomDelete.querySelector('.room-number').value.trim(),type=displayType(pendingRoomDelete.dataset.type);$('deleteRoomMessage').textContent=number?`Room ${number} — ${type} will be permanently deleted, including all checklist answers, comments, and photos.`:`This ${type} room inspection will be permanently deleted, including all checklist answers, comments, and photos.`;if(!$('deleteRoomDialog').open)$('deleteRoomDialog').showModal()}function cancelDeleteRoom(){pendingRoomDelete=null;if($('deleteRoomDialog').open)$('deleteRoomDialog').close()}function confirmDeleteRoom(){if(pendingRoomDelete){pendingRoomDelete.remove();pendingRoomDelete=null;renderGroups();ensureEmpty();autosave()}if($('deleteRoomDialog').open)$('deleteRoomDialog').close();notify('Room inspection deleted')}
-function renderGroups(){const all=[...document.querySelectorAll('.room')],frag=document.createDocumentFragment();for(const type of Object.keys(DEFAULTS)){const group=all.filter(r=>r.dataset.type===type);if(!group.length)continue;const label=document.createElement('div');label.className='group-label';label.textContent=`${displayType(type)} — ${group.length} Room${group.length===1?'':'s'}`;frag.appendChild(label);group.forEach(r=>frag.appendChild(r))}$('rooms').replaceChildren(frag);}
+function renderGroups(){const all=[...document.querySelectorAll('.room')],frag=document.createDocumentFragment();for(const type of allTypeKeys()){const group=all.filter(r=>r.dataset.type===type);if(!group.length)continue;const label=document.createElement('div');label.className='group-label';label.textContent=`${displayType(type)} — ${group.length} Room${group.length===1?'':'s'}`;frag.appendChild(label);group.forEach(r=>frag.appendChild(r))}$('rooms').replaceChildren(frag);}
 let languageRequest=0;const translationCache={};
 async function translateChecklistText(text,language){const key=`${language}|${text}`;if(translationCache[key])return translationCache[key];try{const stored=localStorage.getItem(`hkTranslation:${key}`);if(stored)return translationCache[key]=stored}catch(error){}const url=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(language)}&dt=t&q=${encodeURIComponent(text)}`,response=await fetch(url);if(!response.ok)throw new Error(`Translation service returned ${response.status}`);const data=await response.json(),translated=(data[0]||[]).map(part=>part[0]).join('').trim();if(!translated)throw new Error('Empty translation');translationCache[key]=translated;try{localStorage.setItem(`hkTranslation:${key}`,translated)}catch(error){}return translated}
 async function changeChecklistLanguage(language,announce=true,scope=document){const request=++languageRequest,standards=[...scope.querySelectorAll('.standard')],rtl=language==='ar'||language==='ur';$('checklistLanguage').value=language;localStorage.setItem('hkChecklistLanguage',language);if(language==='en'){standards.forEach(node=>{node.textContent=node.dataset.english||node.textContent;node.lang='en';node.dir='ltr'});if(announce)notify('Checklist language changed to Default English');return}if(announce)notify('Translating checklist items…');let cursor=0,failed=false;const worker=async()=>{while(cursor<standards.length){const node=standards[cursor++],english=node.dataset.english||node.textContent;try{const translated=await translateChecklistText(english,language);if(request!==languageRequest)return;node.textContent=translated;node.lang=language;node.dir=rtl?'rtl':'ltr'}catch(error){console.warn(error);failed=true;node.textContent=english;node.lang='en';node.dir='ltr'}}};await Promise.all(Array.from({length:Math.min(6,standards.length)},worker));if(request!==languageRequest)return;if(announce)notify(failed?'Some checklist items could not be translated. Check your internet connection.':'Checklist items translated successfully')}
@@ -263,7 +235,7 @@ function englishStandardFor(item){const room=item.closest('.room'),index=Number(
 async function normalizePhoto(file){let source,url;try{source=await createImageBitmap(file,{imageOrientation:'from-image'})}catch(error){url=URL.createObjectURL(file);source=await new Promise((resolve,reject)=>{const image=new Image;image.onload=()=>resolve(image);image.onerror=reject;image.src=url})}const width=source.width||source.naturalWidth,height=source.height||source.naturalHeight,scale=Math.min(1,1600/Math.max(width,height)),canvas=document.createElement('canvas');canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(source,0,0,canvas.width,canvas.height);source.close?.();if(url)URL.revokeObjectURL(url);return canvas.toDataURL('image/jpeg',.9)}
 async function rotatePhoto(button,degrees){const img=button.closest('.photo-card').querySelector('img'),source=await new Promise((resolve,reject)=>{const image=new Image;image.onload=()=>resolve(image);image.onerror=reject;image.src=img.src}),swap=Math.abs(degrees)%180===90,canvas=document.createElement('canvas');canvas.width=swap?source.naturalHeight:source.naturalWidth;canvas.height=swap?source.naturalWidth:source.naturalHeight;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.translate(canvas.width/2,canvas.height/2);ctx.rotate(degrees*Math.PI/180);ctx.drawImage(source,-source.naturalWidth/2,-source.naturalHeight/2);img.src=canvas.toDataURL('image/jpeg',.9);autosave()}
 let signatureData='',signatureDrawing=false,signatureLast=null;const signatureScale=()=>Math.max(window.devicePixelRatio||1,3);
-function sizeSignaturePad(){const canvas=$('signaturePad'),rect=canvas.getBoundingClientRect(),saved=signatureData||(!isSignatureBlank()?canvas.toDataURL('image/png'):''),ratio=signatureScale();canvas.width=Math.max(1,Math.round(rect.width*ratio));canvas.height=Math.max(1,Math.round(rect.height*ratio));const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#0000FF';ctx.lineWidth=2.1;if(saved)renderSignature(saved,false,false)}
+function sizeSignaturePad(){const canvas=$('signaturePad');if(signatureDrawing)return;const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;const ratio=signatureScale(),newW=Math.max(1,Math.round(rect.width*ratio)),newH=Math.max(1,Math.round(rect.height*ratio));if(canvas.width===newW&&canvas.height===newH)return;const saved=signatureData||(!isSignatureBlank()?canvas.toDataURL('image/png'):'');canvas.width=newW;canvas.height=newH;const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#0000FF';ctx.lineWidth=2.1;if(saved)renderSignature(saved,false,false)}
 function signaturePoint(event){const rect=$('signaturePad').getBoundingClientRect();return {x:event.clientX-rect.left,y:event.clientY-rect.top}}
 function startSignature(event){event.preventDefault();signatureDrawing=true;signatureLast=signaturePoint(event);$('signaturePad').setPointerCapture?.(event.pointerId);$('signatureHint').classList.add('hidden')}
 function drawSignature(event){if(!signatureDrawing)return;event.preventDefault();const point=signaturePoint(event),ctx=$('signaturePad').getContext('2d');ctx.beginPath();ctx.moveTo(signatureLast.x,signatureLast.y);ctx.lineTo(point.x,point.y);ctx.stroke();signatureLast=point;const now=Date.now();if(!drawSignature.lastCommit||now-drawSignature.lastCommit>180){signatureData=$('signaturePad').toDataURL('image/png');drawSignature.lastCommit=now}}
@@ -330,8 +302,6 @@ function applyCustomization(){
 }
 function validate(){if(!$('checkedBy').value.trim())return showWarning('Checked By is required.',$('checkedBy')),false;if(!$('designation').value.trim())return showWarning('Designation is required.',$('designation')),false;if(!$('reportDate').value)return showWarning('Inspection Date is required.',$('reportDate')),false;if(isSignatureBlank())return showWarning('Signature is required. Please sign or browse a signature image.',$('signaturePad')),false;const rooms=[...document.querySelectorAll('.room')];if(!rooms.length)return showWarning('Add at least one room inspection.',$('typeButtons')),false;for(const room of rooms){const roomInput=room.querySelector('.room-number'),roomLabel=roomInput.value.trim()||'Not entered';if(!roomInput.value.trim())return showWarning(`Room Number is required for ${displayType(room.dataset.type)}.`,roomInput),false;for(const textarea of room.querySelectorAll('.comment textarea'))if(/[^\x00-\x7F]/.test(textarea.value))return showWarning('Write comment in English Language Only',textarea),false;for(const item of room.querySelectorAll('.item'))if(!item.querySelector('input:checked'))return showWarning(`Room ${roomLabel}: checklist item ${Number(item.dataset.index)+1} is missing Pass or Fail.`,item.querySelector('.rating')),false;for(const item of room.querySelectorAll('.item.fail'))if(!item.querySelector('textarea').value.trim())return showWarning(`Room ${roomLabel}: a comment is required for failed checklist item ${Number(item.dataset.index)+1}.`,item.querySelector('textarea')),false}return true}
 function fmtDate(v){if(!v)return'';const [y,m,d]=v.split('-'),months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return `${d}/${months[Number(m)-1]}/${y}`} function fmtTime(v){return normalizeTime(v)}
-async function generatePDF(){if(!validate())return;if(!window.jspdf){notify('PDF library could not load');return}const {jsPDF}=window.jspdf,pdf=new jsPDF({unit:'mm',format:'a4',compress:true}),W=210,H=297,M=12;let y=12;const pageHead=(subtitle='')=>{pdf.setFillColor(16,27,47);pdf.rect(0,0,W,28,'F');pdf.setTextColor(234,219,189);pdf.setFont('helvetica','bold');pdf.setFontSize(9);pdf.text(config.property.toUpperCase(),W/2,9,{align:'center'});pdf.setTextColor(255,255,255);pdf.setFontSize(16);pdf.text('DAILY HOUSEKEEPING PROTOCOL',W/2,18,{align:'center'});pdf.setFontSize(8);if(subtitle)pdf.text(subtitle,W/2,24,{align:'center'});y=35};const footer=()=>{pdf.setDrawColor(185,152,90);pdf.line(M,H-11,W-M,H-11);pdf.setTextColor(80,92,110);pdf.setFontSize(7);pdf.text('Daily Housekeeping Controlled Report • Time format: 24-hour format',M,H-6);pdf.text(String(pdf.getNumberOfPages()),W-M,H-6,{align:'right'})};const newPage=(sub)=>{footer();pdf.addPage();pageHead(sub)};pageHead();pdf.setTextColor(20,30,45);pdf.setFontSize(10);pdf.text(`Checked By: ${$('checkedBy').value}`,M,y);pdf.text(`Date: ${fmtDate($('reportDate').value)}`,W-M,y,{align:'right'});y+=8;const ordered=Object.keys(DEFAULTS).flatMap(type=>[...document.querySelectorAll('.room')].filter(room=>room.dataset.type===type));let lastType='';for(const [ri,room] of ordered.entries()){const type=room.dataset.type;if(ri)newPage(displayType(type));if(type!==lastType){pdf.setFillColor(185,152,90);pdf.rect(M,y,W-2*M,9,'F');pdf.setTextColor(16,27,47);pdf.setFont('helvetica','bold');pdf.setFontSize(11);pdf.text(displayType(type),W/2,y+6,{align:'center'});pdf.setFont('helvetica','normal');y+=13;lastType=type}const num=room.querySelector('.room-number').value,time=fmtTime(room.querySelector('.room-time').value);pdf.setFillColor(37,54,80);pdf.rect(M,y,W-2*M,14,'F');pdf.setTextColor(255,255,255);pdf.setFontSize(10);pdf.text(`Room ${num}  •  ${displayType(type)}`,M+4,y+6);pdf.setFontSize(8);pdf.text(`Inspection Time: ${time}`,M+4,y+11);y+=18;const items=[...room.querySelectorAll('.item')];for(let i=0;i<items.length;i++){const item=items[i],standard=englishStandardFor(item),result=item.querySelector('input:checked').value,comment=item.querySelector('textarea').value.trim(),lines=pdf.splitTextToSize(standard,145),clines=comment?pdf.splitTextToSize(`Comment: ${comment}`,168):[],height=Math.max(11,lines.length*4+5)+(clines.length?clines.length*3.5+3:0);if(y+height>H-17)newPage(`Room ${num} • ${displayType(type)}`);pdf.setDrawColor(210,218,228);pdf.rect(M,y,W-2*M,height);pdf.setFillColor(result==='Pass'?31:217,result==='Pass'?157:45,result==='Pass'?85:32);pdf.circle(M+6,y+6,3,'F');pdf.setTextColor(255,255,255);pdf.setFontSize(7);pdf.text(String(i+1),M+6,y+7,{align:'center'});pdf.setTextColor(25,34,51);pdf.setFontSize(8);pdf.text(lines,M+12,y+5);pdf.setFont('helvetica','bold');pdf.setTextColor(result==='Pass'?23:180,result==='Pass'?114:35,result==='Pass'?69:24);pdf.text(result,W-M-4,y+6,{align:'right'});pdf.setFont('helvetica','normal');if(clines.length){pdf.setTextColor(80,92,110);pdf.setFontSize(7);pdf.text(clines,M+12,y+lines.length*4+6)}y+=height+2}}
-footer();pdf.save(`Daily_Housekeeping_Protocol_${$('reportDate').value}.pdf`);notify('PDF report downloaded')}
 generatePDF=async function(){
  if(!validate())return;if(!window.jspdf){notify('PDF library could not load');return}
  const {jsPDF}=window.jspdf,pdf=new jsPDF({unit:'mm',format:'a4',compress:true,putOnlyUsedFonts:true,precision:2}),W=210,H=297,M=10,GOLD=[185,152,90],CHAMP=[239,225,195],PALE=[250,246,237],INK=[31,37,47],LINE=[211,202,182];let y=0;
@@ -343,7 +313,7 @@ generatePDF=async function(){
  const drawTypeIcon=(type,x,cy,bg,fg)=>{pdf.setLineWidth(.35);pdf.setDrawColor(...fg);pdf.setFillColor(...fg);if(type==='Daily Service Occupied'){pdf.circle(x,cy,1.15,'F');for(const [dx,dy] of [[0,-2.2],[0,2.2],[-2.2,0],[2.2,0],[-1.55,-1.55],[1.55,-1.55],[-1.55,1.55],[1.55,1.55]])pdf.line(x+dx*.72,cy+dy*.72,x+dx,cy+dy)}else if(type==='Evening Service'){pdf.circle(x,cy,2,'F');pdf.setFillColor(...bg);pdf.circle(x+.9,cy-.45,1.75,'F')}else{pdf.circle(x-1.2,cy,1.15,'S');pdf.line(x,cy,x+2.6,cy);pdf.line(x+1.7,cy,x+1.7,cy+1);pdf.line(x+2.5,cy,x+2.5,cy+.8)}};
  const headerX=M,headerY=3,headerW=W-2*M,headerH=16;pdf.setFillColor(...CHAMP);pdf.setDrawColor(...GOLD);pdf.setLineWidth(.2);pdf.roundedRect(headerX,headerY,headerW,headerH,3,3,'FD');pdf.setTextColor(90,64,28);pdf.setFont('helvetica','bold');pdf.setFontSize(8);pdf.text('CONRAD ABU DHABI ETIHAD TOWERS',W/2,headerY+5.5,{align:'center'});pdf.setTextColor(...INK);pdf.setFontSize(12.5);pdf.text('DAILY HOUSEKEEPING PROTOCOL',W/2,headerY+12,{align:'center'});y=22;
  const infoWidth=(W-2*M)/4,infoHeight=11;pdf.setFillColor(...PALE);pdf.setDrawColor(...GOLD);pdf.rect(M,y,W-2*M,infoHeight,'FD');for(let column=1;column<4;column++)pdf.line(M+infoWidth*column,y,M+infoWidth*column,y+infoHeight);const centers=[0,1,2,3].map(column=>M+infoWidth*(column+.5));pdf.setTextColor(116,91,51);pdf.setFont('helvetica','bold');pdf.setFontSize(6.7);pdf.text('CHECKED BY',centers[0],y+3,{align:'center'});pdf.text('DESIGNATION',centers[1],y+3,{align:'center'});pdf.text('DATE',centers[2],y+3,{align:'center'});pdf.text('SIGNATURE',centers[3],y+3,{align:'center'});pdf.setTextColor(...INK);pdf.setFontSize(8.7);pdf.text($('checkedBy').value,centers[0],y+8.2,{align:'center'});pdf.text($('designation').value,centers[1],y+8.2,{align:'center'});pdf.text(fmtDate($('reportDate').value),centers[2],y+8.2,{align:'center'});const reportSignature=await compactSignatureForPdf(signatureForPdf().data,620,150);try{const boxW=infoWidth-8,boxH=6.2,scale=Math.min(boxW/reportSignature.width,boxH/reportSignature.height),signatureW=reportSignature.width*scale,signatureH=reportSignature.height*scale;pdf.addImage(reportSignature.data,'PNG',centers[3]-signatureW/2,y+3.7+(boxH-signatureH)/2,signatureW,signatureH,undefined,'FAST')}catch(error){console.warn('Signature could not be added to PDF',error)}y+=14;
- const orderedTypes=Object.keys(DEFAULTS);let renderedType=false;
+ const orderedTypes=allTypeKeys();let renderedType=false;
  for(const type of orderedTypes){const rooms=[...document.querySelectorAll('.room')].filter(room=>room.dataset.type===type);if(!rooms.length)continue;if(renderedType)continuation();renderedType=true;need(9);const typeColor=type==='Daily Service Occupied'?[224,207,171]:type==='Evening Service'?[51,64,77]:[56,72,68],typeGold=type==='Daily Service Occupied'?[61,49,36]:type==='Evening Service'?[228,201,141]:[234,219,189];pdf.setFillColor(...typeColor);pdf.rect(M,y,W-2*M,7,'F');drawTypeIcon(type,M+4.2,y+3.5,typeColor,typeGold);pdf.setTextColor(...typeGold);pdf.setFont('helvetica','bold');pdf.setFontSize(8.5);pdf.text(`INSPECTION TYPE: ${displayType(type).toUpperCase()}`,M+8.5,y+4.8);y+=8;
   let roomInType=0;for(const room of rooms){if(roomInType++)continuation();const num=room.querySelector('.room-number').value,time=ampm(room.querySelector('.room-time').value),roomScore=scoreForRoom(room),resultX=W-M-28;need(17);pdf.setFillColor(...CHAMP);pdf.setDrawColor(...GOLD);pdf.rect(M,y,W-2*M,8,'FD');pdf.setTextColor(...INK);pdf.setFontSize(8.2);pdf.text(`ROOM NUMBER: ${num}`,M+4,y+5.4);pdf.text(`INSPECTION TIME: ${time}`,W/2,y+5.4,{align:'center'});pdf.setTextColor(116,91,51);pdf.setFont('helvetica','bold');pdf.setFontSize(9);pdf.text(`SCORE: ${roomScore}%`,W-M-4,y+5.4,{align:'right'});y+=8.8;pdf.setFillColor(...GOLD);pdf.rect(M,y,W-2*M,5.8,'F');pdf.setDrawColor(255,245,224);pdf.line(resultX,y,resultX,y+5.8);pdf.setTextColor(255,252,245);pdf.setFont('helvetica','bold');pdf.setFontSize(7.4);pdf.text('CHECKLIST ITEM',M+4,y+4);pdf.text('RESULT',resultX+14,y+4,{align:'center'});y+=5.8;
    const items=[...room.querySelectorAll('.item')];for(let i=0;i<items.length;i++){const item=items[i],standard=englishStandardFor(item),result=item.querySelector('input:checked').value,comment=item.querySelector('textarea').value.trim(),photos=[...item.querySelectorAll('.photos img')].map(photoForPdf);pdf.setFont('helvetica','bold');pdf.setFontSize(8);const lines=pdf.splitTextToSize(standard,130);pdf.setFontSize(6.5);const clines=comment?pdf.splitTextToSize(`COMMENT: ${comment}`,130):[],itemTextHeight=Math.max(5.6,lines.length*3.05+1.2),commentHeight=clines.length?clines.length*2.35+3:0,textHeight=itemTextHeight+commentHeight,photoRows=Math.ceil(photos.length/2),height=textHeight+(photoRows?photoRows*41.5+1:0);need(height+.35);pdf.setFillColor(i%2?255:252,i%2?255:250,i%2?255:244);pdf.setDrawColor(...LINE);pdf.rect(M,y,W-2*M,height,'FD');pdf.line(resultX,y,resultX,y+height);pdf.setFillColor(...GOLD);pdf.circle(M+4.7,y+3.2,2.05,'F');pdf.setTextColor(255,255,255);pdf.setFont('helvetica','bold');pdf.setFontSize(6);pdf.text(String(i+1),M+4.7,y+3.9,{align:'center'});pdf.setTextColor(...INK);pdf.setFontSize(8);pdf.text(lines,M+9,y+3.15,{lineHeightFactor:1.05});pdf.setTextColor(...(result==='Pass'?[28,126,75]:[186,43,32]));pdf.setFontSize(7.5);pdf.text(result.toUpperCase(),resultX+14,y+3.6,{align:'center'});if(clines.length){pdf.setTextColor(183,42,32);pdf.setFont('helvetica','bold');pdf.setFontSize(6.5);pdf.text(clines,M+9,y+itemTextHeight+2.45,{lineHeightFactor:1.05})}if(photos.length){const photoY=y+textHeight+.5;photos.forEach((src,p)=>{const px=M+9+(p%2)*56,py=photoY+Math.floor(p/2)*41.5;try{pdf.addImage(src,'JPEG',px,py,53,39.75,undefined,'MEDIUM');pdf.setDrawColor(...GOLD);pdf.rect(px,py,53,39.75)}catch(error){console.warn('Photo could not be added to PDF',error)}})}y+=height+.35}
@@ -355,35 +325,6 @@ generatePDF=async function(){
 const validateFormCore=validate;validate=function(){if(isSignatureBlank()){showWarning('Inspector Signature is required. Click Inspector Signature to open the signature field.',$('signatureLaunch').querySelector('button'));return false}return validateFormCore()};const generatePDFCore=generatePDF;generatePDF=function(){if(!validate())return;try{const result=generatePDFCore();if(result?.catch)result.catch(error=>{console.error(error);notify(`PDF generation failed: ${error.message||'Please try again.'}`)});return result}catch(error){console.error(error);notify(`PDF generation failed: ${error.message||'Please try again.'}`)}}
 const reportWorkflowStyle=document.createElement('style');reportWorkflowStyle.textContent=`
 .summary .score-percent{display:inline-flex;margin-top:5px;padding:5px 10px;border:2px solid #eadbbd;border-radius:20px;background:#177245;color:#fff!important;font-size:15px;font-weight:900;box-shadow:0 3px 8px rgba(0,0,0,.18)}.employee-ack{display:block;margin:12px 10px;border:3px solid #b9985a;border-radius:13px;background:#faf6ed;overflow:hidden;box-shadow:0 8px 20px rgba(16,27,47,.12)}.employee-ack-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;background:#253650;color:#fff;font-size:15px;font-weight:900}.employee-ack-score{display:inline-flex;padding:7px 13px;border:2px solid #eadbbd;border-radius:20px;background:#177245;color:#fff;font-size:17px;box-shadow:0 3px 9px rgba(0,0,0,.2)}.employee-ack-fields{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:12px;padding:14px}.employee-ack label{display:block;color:#253650;font-size:13px;font-weight:900;text-transform:uppercase}.employee-ack input[type=text]{display:block;width:100%;min-height:50px;margin-top:7px;padding:10px 12px;border:2px solid #aeb9c7;border-radius:9px;background:#fff;color:#101b2f;font-size:18px;font-weight:800}.ack-signature-box{position:relative;display:flex;align-items:center;justify-content:center;background:#fff;border:2px solid #8d6b2f;border-radius:9px;overflow:hidden;touch-action:none;box-shadow:inset 0 0 0 1px #eadbbd;height:145px;width:100%}.ack-signature-box canvas{display:block;width:100%;height:100%;cursor:crosshair;touch-action:none;background:#fff}.ack-signature-hint{position:absolute;inset:0;display:grid;place-items:center;padding:8px;color:#8994a3;font-size:13px;text-align:center;text-transform:none;pointer-events:none;background:rgba(255,255,255,0.85);border-radius:9px}.ack-signature-hint[hidden]{display:none!important}.ack-buttons{display:flex;justify-content:flex-end;gap:8px;padding:0 14px 14px}.ack-buttons .btn{min-width:155px}.ack-file{display:none!important}
-/* PC buttons always visible in acknowledgement mode */
-.acknowledgement-report .customize-launch,
-.acknowledgement-report .actions .save,
-.acknowledgement-report .actions .danger,
-.acknowledgement-report .actions button[onclick*="importInput"],
-.acknowledgement-report #addAnotherRoomButton,
-.acknowledgement-report #importInput { display:flex!important; }
-.acknowledgement-report .inspection-picker,
-.acknowledgement-report .room-start-hint,
-.acknowledgement-report .remove,
-.acknowledgement-report .photo button,
-.acknowledgement-report .photo input,
-.acknowledgement-report .photo-actions { display:none!important; }
-.acknowledgement-report .room-number,
-.acknowledgement-report .room-time,
-.acknowledgement-report .comment textarea,
-.acknowledgement-report #checkedBy,
-.acknowledgement-report #designation,
-.acknowledgement-report #reportDate{background:#eef1f5!important}
-.acknowledgement-report .room-toggle{display:none!important}
-.acknowledgement-report .signature-launch{display:flex!important;margin:5px 12px 9px}
-.acknowledgement-report .signature-launch .btn{min-width:0;min-height:30px;height:30px;padding:4px 10px;font-size:10px}
-.acknowledgement-report .signature-section{margin-top:0}
-/* KEEP signature actions visible */
-.acknowledgement-report .signature-actions{display:flex!important;gap:8px;justify-content:flex-end}
-.acknowledgement-report #signaturePad{pointer-events:none!important;cursor:default!important}
-.acknowledgement-report .signature-pad-wrap{touch-action:auto!important}
-@media(max-width:800px){.employee-ack-fields{grid-template-columns:1fr}.ack-signature-box{height:165px}}
-@media(max-width:520px){.ack-buttons{display:grid;grid-template-columns:1fr 1fr}.ack-buttons .btn{width:100%;min-width:0}}
 `;
 document.head.appendChild(reportWorkflowStyle);
 const roomLayoutStyle=document.createElement('style');roomLayoutStyle.textContent=`
@@ -409,125 +350,229 @@ const updateSummaryOriginal=updateSummary;updateSummary=function(room){updateSum
 
 function ackTemplate(room,data={}){const number=room.querySelector('.room-number').value||'Not entered',score=scoreForRoom(room);return `<section class="employee-ack"><div class="employee-ack-head"><span>Room ${esc(number)} — Employee Acknowledgement</span><span class="employee-ack-score">Score: ${score}%</span></div><div class="employee-ack-fields"><label>Acknowledged By<input class="ack-name" type="text" value="${esc(data.name||'')}" placeholder="Employee full name" oninput="handleAcknowledgementChange(this)"></label><label>Designation<input class="ack-designation" type="text" value="${esc(data.designation||'')}" placeholder="Job title" oninput="handleAcknowledgementChange(this)"></label><label>Signature<div class="ack-signature-box"><canvas class="ack-signature" aria-label="Employee signature"></canvas><span class="ack-signature-hint">Sign here using mouse, pen, or finger</span></div></label></div><div class="ack-buttons"><button class="btn primary" type="button" onclick="this.nextElementSibling.click()">Browse Signature</button><input class="ack-file" type="file" accept="image/*" onchange="loadAckSignature(this)"><button class="btn danger" type="button" onclick="clearAckSignature(this)">Clear Signature</button></div></section>`}
 function ackData(room){const ack=room.querySelector('.employee-ack');return {name:ack?.querySelector('.ack-name')?.value||'',designation:ack?.querySelector('.ack-designation')?.value||'',signature:ack?.querySelector('.ack-signature')?.dataset.signature||''}}
-function addAcknowledgements(data=[]){document.querySelectorAll('.room').forEach((room,index)=>{room.querySelector('.employee-ack')?.remove();room.querySelector('.ack-room-toggle')?.remove();room.insertAdjacentHTML('beforeend',ackTemplate(room,data[index]||{}));room.querySelector('.employee-ack').insertAdjacentHTML('beforeend','<div class="ack-room-control"><button class="ack-room-toggle" type="button" disabled onclick="toggleAcknowledgedRoom(this)">Complete Acknowledgement</button></div>');initAckCanvas(room.querySelector('.ack-signature'),data[index]?.signature||'');setTimeout(()=>updateAcknowledgementToggle(room),0)})}
-// FIXED: robust mobile + desktop signature drawing with centered canvas
+function addAcknowledgements(data=[]){document.querySelectorAll('.room').forEach((room,index)=>{room.querySelector('.employee-ack')?.remove();room.querySelector('.ack-room-toggle')?.remove();room.insertAdjacentHTML('beforeend',ackTemplate(room,data[index]||{}));room.querySelector('.employee-ack').insertAdjacentHTML('beforeend','<div class="ack-room-control"><button class="ack-room-toggle" type="button" onclick="toggleAcknowledgedRoom(this)">Complete Acknowledgement</button></div>');initAckCanvas(room.querySelector('.ack-signature'),data[index]?.signature||'');setTimeout(()=>updateAcknowledgementToggle(room),0)})}
+/**
+ * FIX: Employee signature canvas – robust for PC & mobile.
+ * - Uses a stable size based on bounding client rect.
+ * - Preserves existing ink across resize without re-centering.
+ * - Touch + pointer events work reliably.
+ */
 function initAckCanvas(canvas, saved=''){
-    const resize=()=>{
-        const rect=canvas.getBoundingClientRect();
-        if(!rect.width) return;
-        const ratio=Math.max(window.devicePixelRatio||1, 4);
-        canvas.width=Math.round(rect.width*ratio);
-        canvas.height=Math.round(rect.height*ratio);
-        const ctx=canvas.getContext('2d');
-        ctx.setTransform(ratio,0,0,ratio,0,0);
-        ctx.lineCap='round';
-        ctx.lineJoin='round';
-        ctx.lineWidth=2.5;
-        ctx.strokeStyle='#0000FF';
-        ctx.fillStyle='#0000FF';
-        if(saved){
-            const image=new Image();
-            image.onload=()=>{
-                ctx.drawImage(image,0,0,rect.width,rect.height);
-                canvas.dataset.signature=saved;
-                const hint=canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint');
-                if(hint) hint.hidden=true;
+    let drawing = false, last = null;
+    const resize = () => {
+        // Do not resize while drawing – prevents flicker / jump
+        if (drawing) return;
+        const rect = canvas.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const ratio = Math.max(window.devicePixelRatio || 1, 2);
+        const newW = Math.round(rect.width * ratio), newH = Math.round(rect.height * ratio);
+        if (canvas.width === newW && canvas.height === newH) return;
+        const keep = (canvas.dataset.signature !== undefined && canvas.dataset.signature !== '') ? canvas.dataset.signature : saved;
+        canvas.width = newW;
+        canvas.height = newH;
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#0000FF';
+        ctx.fillStyle = '#0000FF';
+        if (keep) {
+            const image = new Image();
+            image.onload = () => {
+                ctx.clearRect(0, 0, rect.width, rect.height);
+                ctx.drawImage(image, 0, 0, rect.width, rect.height);
+                canvas.dataset.signature = keep;
+                const hint = canvas.closest('.ack-signature-box')?.querySelector('.ack-signature-hint');
+                if (hint) hint.hidden = true;
                 updateAcknowledgementToggle(canvas.closest('.room'));
             };
-            image.src=saved;
+            image.src = keep;
         }
     };
+    resize();
     requestAnimationFrame(resize);
-    setTimeout(resize, 100);
-    let drawing=false, last=null;
-    const getPoint=(e)=>{
-        const rect=canvas.getBoundingClientRect();
+    setTimeout(resize, 150);
+    if (window.ResizeObserver) {
+        const ro = new ResizeObserver(() => resize());
+        ro.observe(canvas);
+    } else {
+        window.addEventListener('resize', () => { clearTimeout(canvas._ackResizeTimer); canvas._ackResizeTimer = setTimeout(resize, 180); });
+    }
+    const getPoint = (e) => {
+        const rect = canvas.getBoundingClientRect();
         let clientX, clientY;
-        if(e.touches){
-            clientX=e.touches[0].clientX;
-            clientY=e.touches[0].clientY;
+        if (e.touches) {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
         } else {
-            clientX=e.clientX;
-            clientY=e.clientY;
+            clientX = e.clientX;
+            clientY = e.clientY;
         }
-        return {x:clientX-rect.left, y:clientY-rect.top};
+        return { x: clientX - rect.left, y: clientY - rect.top };
     };
-    const startDraw=(e)=>{
+    const startDraw = (e) => {
         e.preventDefault();
-        drawing=true;
-        const p=getPoint(e);
-        last=p;
-        const ctx=canvas.getContext('2d');
+        // Ensure canvas is sized before drawing starts
+        const rect = canvas.getBoundingClientRect();
+        if (!rect.width || !rect.height) { resize(); }
+        drawing = true;
+        const p = getPoint(e);
+        last = p;
+        const ctx = canvas.getContext('2d');
+        // Draw a dot at the start point
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.2, 0, Math.PI*2);
+        ctx.arc(p.x, p.y, 1.2, 0, Math.PI * 2);
         ctx.fill();
-        const hint=canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint');
-        if(hint) hint.hidden=true;
-        canvas.setPointerCapture?.(e.pointerId);
+        const hint = canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint');
+        if (hint) hint.hidden = true;
+        if (canvas.setPointerCapture) canvas.setPointerCapture(e.pointerId);
     };
-    const moveDraw=(e)=>{
+    const moveDraw = (e) => {
         e.preventDefault();
-        if(!drawing) return;
-        const p=getPoint(e);
-        const ctx=canvas.getContext('2d');
+        if (!drawing) return;
+        const p = getPoint(e);
+        const ctx = canvas.getContext('2d');
         ctx.beginPath();
         ctx.moveTo(last.x, last.y);
         ctx.lineTo(p.x, p.y);
         ctx.stroke();
-        last=p;
+        last = p;
     };
-    const endDraw=(e)=>{
+    const endDraw = (e) => {
         e?.preventDefault?.();
-        if(!drawing) return;
-        drawing=false;
-        canvas.dataset.signature=canvas.toDataURL('image/png');
+        if (!drawing) return;
+        drawing = false;
+        canvas.dataset.signature = canvas.toDataURL('image/png');
         updateAcknowledgementToggle(canvas.closest('.room'));
         autosave();
     };
+    // Pointer events (PC & modern touch)
     canvas.addEventListener('pointerdown', startDraw);
     canvas.addEventListener('pointermove', moveDraw);
     canvas.addEventListener('pointerup', endDraw);
     canvas.addEventListener('pointercancel', endDraw);
-    canvas.addEventListener('touchstart', startDraw, {passive:false});
-    canvas.addEventListener('touchmove', moveDraw, {passive:false});
-    canvas.addEventListener('touchend', endDraw, {passive:false});
-    canvas.addEventListener('touchcancel', endDraw, {passive:false});
-    const cleanup=()=>{ if(drawing) endDraw(null); };
+    // Legacy touch events (fallback)
+    canvas.addEventListener('touchstart', startDraw, { passive: false });
+    canvas.addEventListener('touchmove', moveDraw, { passive: false });
+    canvas.addEventListener('touchend', endDraw, { passive: false });
+    canvas.addEventListener('touchcancel', endDraw, { passive: false });
+    const cleanup = () => { if (drawing) endDraw(null); };
     window.addEventListener('pagehide', cleanup);
     window.addEventListener('beforeunload', cleanup);
 }
-function loadAckSignature(input){const file=input.files?.[0];if(!file)return;const reader=new FileReader;reader.onload=()=>{const canvas=input.closest('.employee-ack').querySelector('.ack-signature'),image=new Image;image.onload=()=>{const ctx=canvas.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);const scale=Math.min(canvas.width/image.width,canvas.height/image.height),width=image.width*scale,height=image.height*scale;ctx.drawImage(image,(canvas.width-width)/2,(canvas.height-height)/2,width,height);removeSignatureBackground(canvas);canvas.dataset.signature=canvas.toDataURL('image/png');canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint').hidden=true;updateAcknowledgementToggle(canvas.closest('.room'));autosave()};image.src=reader.result};reader.readAsDataURL(file);input.value=''}
-function clearAckSignature(button){const canvas=button.closest('.employee-ack').querySelector('.ack-signature'),ctx=canvas.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);canvas.dataset.signature='';canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint').hidden=false;updateAcknowledgementToggle(canvas.closest('.room'));autosave()}
+
+/**
+ * FIX: clearAckSignature – properly reset transform so subsequent drawing works.
+ * Previously the transform was left at identity, causing the next signature
+ * to appear in the top-left corner.
+ */
+function clearAckSignature(button){
+    const canvas=button.closest('.employee-ack').querySelector('.ack-signature');
+    const ctx=canvas.getContext('2d');
+    const ratio = Math.max(window.devicePixelRatio || 1, 2);
+    // Save current transform, set to identity, clear, then restore
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
+    // Re-apply the correct transform for drawing
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    canvas.dataset.signature='';
+    const hint = canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint');
+    if (hint) hint.hidden = false;
+    updateAcknowledgementToggle(canvas.closest('.room'));
+    autosave();
+}
+
+/**
+ * FIX: loadAckSignature – re-apply transform after loading an image.
+ */
+function loadAckSignature(input){
+    const file=input.files?.[0];
+    if(!file)return;
+    const reader=new FileReader;
+    reader.onload=()=>{
+        const canvas=input.closest('.employee-ack').querySelector('.ack-signature');
+        const image=new Image;
+        image.onload=()=>{
+            const ctx=canvas.getContext('2d');
+            const ratio = Math.max(window.devicePixelRatio || 1, 2);
+            ctx.save();
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const scale=Math.min(canvas.width/image.width, canvas.height/image.height);
+            const width=image.width*scale;
+            const height=image.height*scale;
+            ctx.drawImage(image, (canvas.width-width)/2, (canvas.height-height)/2, width, height);
+            ctx.restore();
+            ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+            removeSignatureBackground(canvas);
+            canvas.dataset.signature=canvas.toDataURL('image/png');
+            canvas.closest('.ack-signature-box').querySelector('.ack-signature-hint').hidden=true;
+            updateAcknowledgementToggle(canvas.closest('.room'));
+            autosave();
+        };
+        image.src=reader.result;
+    };
+    reader.readAsDataURL(file);
+    input.value='';
+}
 function handleAcknowledgementChange(input){updateAcknowledgementToggle(input.closest('.room'));autosave()}
-function updateAcknowledgementToggle(room){if(!room)return;const ack=ackData(room),button=room.querySelector('.ack-room-toggle'),complete=Boolean(ack.name.trim()&&ack.designation.trim()&&ack.signature),control=room.querySelector('.ack-room-control');if(!button)return;button.disabled=!complete;if(!complete){room.classList.remove('ack-room-collapsed');if(control&&!control.contains(button))control.appendChild(button);button.textContent='Complete Acknowledgement'}else button.textContent=room.classList.contains('ack-room-collapsed')?'Show Room':'Hide Room'}
+/**
+ * FIX: Remove disabling of the acknowledgement toggle button.
+ * The button is always enabled; its text reflects completion state
+ * but it never blocks the user from interacting with it.
+ */
+function updateAcknowledgementToggle(room){
+    if(!room)return;
+    const ack=ackData(room);
+    const button=room.querySelector('.ack-room-toggle');
+    const control=room.querySelector('.ack-room-control');
+    if(!button)return;
+    // Always enabled – never disable the button
+    button.disabled = false;
+    const complete = Boolean(ack.name.trim() && ack.designation.trim() && ack.signature);
+    if(!complete){
+        room.classList.remove('ack-room-collapsed');
+        if(control && !control.contains(button)) control.appendChild(button);
+        button.textContent = 'Complete Acknowledgement';
+    } else {
+        button.textContent = room.classList.contains('ack-room-collapsed') ? 'Show Room' : 'Hide Room';
+    }
+}
 function toggleAcknowledgedRoom(button){const room=button.closest('.room'),control=room.querySelector('.ack-room-control'),head=room.querySelector('.room-head');if(button.disabled)return;if(room.classList.contains('ack-room-collapsed')){room.classList.remove('ack-room-collapsed');control.appendChild(button);button.textContent='Hide Room'}else{room.classList.add('ack-room-collapsed');head.appendChild(button);button.textContent='Show Room'}room.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function validateAcknowledgements(){for(const room of document.querySelectorAll('.room')){const number=room.querySelector('.room-number').value,ack=room.querySelector('.employee-ack');if(!ack.querySelector('.ack-name').value.trim())return showWarning(`Room ${number}: Acknowledged By is required.`,ack.querySelector('.ack-name')),false;if(!ack.querySelector('.ack-designation').value.trim())return showWarning(`Room ${number}: Designation is required.`,ack.querySelector('.ack-designation')),false;if(!ack.querySelector('.ack-signature').dataset.signature)return showWarning(`Room ${number}: employee signature is required.`,ack.querySelector('.ack-signature')),false}return true}
 function toggleInspectorSignatureForReport(){const section=$('signatureSection'),button=$('signatureLaunch').querySelector('button'),show=section.classList.contains('hidden');section.classList.toggle('hidden',!show);button.textContent=show?'Hide Inspector Signature':'Show Inspector Signature';if(show){const reveal=()=>{sizeSignaturePad();if(embeddedInspectorSignature)renderSignature(embeddedInspectorSignature,false,true)};requestAnimationFrame(reveal);setTimeout(reveal,120);section.scrollIntoView({behavior:'smooth',block:'nearest'})}}
-function lockCompletedInspection(){document.querySelectorAll('input,textarea').forEach(field=>{if(!field.closest('.employee-ack'))field.readOnly=true});document.querySelectorAll('select').forEach(field=>field.disabled=true);document.querySelectorAll('.rating input').forEach(field=>field.disabled=true);document.querySelectorAll('.comment textarea').forEach(field=>field.readOnly=true);$('reportDate').disabled=true}
-function startAcknowledgementReport(data=[]){
-    document.body.classList.add('acknowledgement-report');
-    document.querySelectorAll('.room').forEach(room=>room.classList.remove('room-hidden'));
-    lockCompletedInspection();
-    // Always show the inspector signature button
-    $('signatureSection').classList.add('hidden');
-    $('signatureLaunch').classList.remove('hidden');
-    const signatureButton=$('signatureLaunch').querySelector('button');
-    signatureButton.textContent='Show Inspector Signature';
-    signatureButton.onclick=toggleInspectorSignatureForReport;
-    const button=document.querySelector('.report-action');
-    button.textContent='Generate PDF Report';
-    button.onclick=()=>{
-        if(validateAcknowledgements()) generatePDF();
-    };
-    // Ensure actions stay visible on PC
-    const actions=document.querySelector('.actions');
-    if(actions && window.innerWidth > 1000) {
-        actions.classList.add('open');
-        const toggleBtn=document.getElementById('actionsToggle');
-        if(toggleBtn) toggleBtn.textContent='Hide Buttons';
-    }
+/**
+ * FIX: Generate PDF immediately – no button hiding, no disabling.
+ * - Removes the `acknowledgement-report` class that hides UI.
+ * - Does not change button text or behavior.
+ * - Runs validations then immediately generates the PDF.
+ * - All buttons remain visible and enabled.
+ */
+function beginAcknowledgementFlow(){
+    if(signatureDrawing) endSignature();
+    // Validate the full report (inspector signature, rooms, etc.)
+    if(!validate()) return;
+    // Store the inspector signature for later use
+    embeddedInspectorSignature = signatureData || embeddedInspectorSignature;
+    // Ensure the signature section is visible for the PDF
+    $('signatureSection').classList.remove('hidden');
+    $('signatureLaunch').classList.add('hidden');
+    // Validate employee acknowledgements for each room
+    if(!validateAcknowledgements()) return;
+    // 🔥 Directly generate the PDF – no button hiding, no disabling
+    generatePDF();
 }
-function beginAcknowledgementFlow(){if(signatureDrawing)endSignature();if(!validate())return;embeddedInspectorSignature=signatureData||embeddedInspectorSignature;startAcknowledgementReport([]);notify('Discuss the inspection results, complete every room acknowledgement, then generate the PDF report.')}
+/**
+ * FIX: Override the old startAcknowledgementReport to do nothing that hides buttons.
+ * We keep a stub so any lingering calls don't break.
+ */
+function startAcknowledgementReport(data=[]){
+    // Intentionally empty – we no longer hide or disable anything.
+    // The PDF generation is handled directly in beginAcknowledgementFlow.
+}
 
 let embeddedInspectorSignature='';const renderSignatureOnVisibleCanvas=renderSignature;renderSignature=function(src,save=true,removeBackground=false){const canvas=$('signaturePad'),rect=canvas.getBoundingClientRect();embeddedInspectorSignature=src||embeddedInspectorSignature;if($('signatureSection').classList.contains('hidden')||rect.width<20||rect.height<20){signatureData=src||signatureData;if(save)autosave();$('signatureHint').classList.add('hidden');return}return renderSignatureOnVisibleCanvas(src,save,removeBackground)};
 function syncFormattedDate(){const display=$('reportDateDisplay'),input=$('reportDate');if(display&&input)display.value=input.value?fmtDate(input.value):''}
@@ -535,40 +580,4 @@ function initFormattedDateField(){const input=$('reportDate');if(!input)return;l
 const restoreWithFormattedDate=restore;restore=function(data){restoreWithFormattedDate(data);syncFormattedDate()};
 const formattedDateStyle=document.createElement('style');formattedDateStyle.textContent='.formatted-date-wrap{position:relative;width:100%;min-height:38px}.formatted-date-display{width:100%;min-height:38px;padding:8px 34px 8px 10px!important;border:0!important;background:#fff!important;color:#101b2f!important;font-size:16px!important;font-weight:900!important;text-align:center!important}.formatted-date-wrap #reportDate{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;cursor:pointer!important}.acknowledgement-report .formatted-date-wrap #reportDate{pointer-events:none!important}.acknowledgement-report .formatted-date-display{background:#eef1f5!important}';document.head.appendChild(formattedDateStyle);
 document.querySelectorAll('.header .brand,.brand').forEach(element=>element.remove());document.querySelectorAll('.bottom .primary,.bottom [onclick*="generatePDF"]').forEach(element=>element.remove());populateLanguageList();$('reportDate').value=today();initFormattedDateField();applyBrand();initSignature();const saved=JSON.parse(localStorage.getItem(draftKey())||'null');if(saved)restore(saved);else ensureEmpty();syncFormattedDate();if(signatureData)embeddedInspectorSignature=signatureData;$('signatureSection').classList.add('hidden');$('signatureLaunch').classList.remove('hidden');document.querySelectorAll('.room').forEach(updateSummary);['checkedBy','designation','reportDate'].forEach(id=>$(id).addEventListener('input',autosave));const savedLanguage=localStorage.getItem('hkChecklistLanguage')||'en';$('checklistLanguage').value=savedLanguage;if(savedLanguage!=='en')changeChecklistLanguage(savedLanguage,false);
-</script><script>
-(function() {
-  var ws = new WebSocket('ws://' + window.location.host + 
-             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
-             'referrer=' + encodeURIComponent(window.location.pathname));
-  ws.onmessage = function (msg) {
-      if (msg.data === 'reload') {
-          window.location.reload();
-      }
-      if (msg.data.startsWith('update-css ')) {
-          var messageId = msg.data.substring(11);
-          var links = document.getElementsByTagName('link');
-          for (var i = 0; i < links.length; i++) {
-              var link = links[i];
-              if (link.rel !== 'stylesheet') continue;
-              var clonedLink = link.cloneNode(true);
-              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
-              if (newHref !== link.href) {
-                clonedLink.href = newHref;
-              }
-              else {
-                var indexOfQuest = newHref.indexOf('?');
-                if (indexOfQuest >= 0) {
-                  // to support ?foo#hash 
-                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
-                                    newHref.substring(indexOfQuest + 1);
-                }
-                else {
-                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
-                }
-              }
-              link.replaceWith(clonedLink);
-          }
-      }
-  };
-})();
 </script></body></html>
